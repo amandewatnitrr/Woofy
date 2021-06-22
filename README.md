@@ -1,2 +1,1 @@
-# Woofy
-Infant Monitoring System
+# Woofy - Infant Monitoring System
