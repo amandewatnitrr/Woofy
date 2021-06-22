@@ -17,7 +17,7 @@ Consider the possibility that we utilize this innovation to help moms. Also, tha
 <p align="justify">
 
   1. Ensure Infant Safety and Hygiene : As soon as the cradle pad is detected to be wet or a discharge is detected, the guardians will receive a notification.
-  2. 24*7 Baby Under Observation: The baby is under continuous observation 24*7 through a camera at the cradle roof and voice detector to notify if the baby cries.
+  2. 24&#215;7 Baby Under Observation: The baby is under continuous observation 24*7 through a camera at the cradle roof and voice detector to notify if the baby cries.
   3. Notifies Guardian in case of any event that requires immediate attention: In case the baby tries to climb the cradle or if any force that appears to cause the cradle to fall is experienced. The Guardians are notified immediately.
 
 </p>
