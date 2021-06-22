@@ -1,4 +1,4 @@
-# Woofy - Infant Monitoring System
+# Woofy - Infant Monitoring System 👶🏻
 
 <p align="center">
 <img src="https://github.com/amandewatnitrr/Woofy/blob/main/imgs/healthcare-data-platform.gif">
