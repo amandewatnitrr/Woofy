@@ -1,0 +1,95 @@
+{% extends 'woofy_app/base.html' %}
+{% block main_content %}
+{% load static %}
+
+<style>
+	*{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+	
+	.nav-link{
+      color: black;
+		}
+	
+	.btn-primary{
+		border: transparent !important;
+	}
+
+	.signup-button{
+		margin-top: 40px;
+		width:60%;
+		background:linear-gradient(to right,white, aquamarine) ;
+		color: black;
+	}
+	.signup-button:hover{
+		background:linear-gradient(to right,aquamarine, white) ;
+		color: black;
+	}
+	.already-last-line{
+		margin-top: 20px;
+		color: rgb(83, 81, 81);
+	}
+	.already-last-line a{
+		color: rgb(31, 146, 121);
+	}
+
+
+/* ////////////////////////////////////////// */
+
+	.wave{
+		position: fixed;
+		height: 90%;
+		left: 0; bottom: 0;
+		z-index: -1;
+	}
+	.container{
+		display: flex;
+		flex-direction: column;
+		width: 100vw;
+		justify-content: space-between;
+		padding: 0;
+	}
+	.img{
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+	.img img{
+		width: 100px;
+	}	
+	.signup-container{
+		display: flex;
+		flex-direction: column;
+		margin-left: auto;
+	}
+
+
+
+
+</style>
+
+<img class="wave" src='{% static "woofy_app/login base image green.svg" %}' alt="">
+<div class="container">
+	<div class="img">
+		<img src='{% static "woofy_app/profile avatar green.svg" %}' alt="">
+	</div>
+	<div class="signup-container">
+		<div class="form-group">
+			<form method="POST">
+				{% csrf_token %}
+				{{form.as_p}}
+
+				<button class="btn btn-primary signup-button" type="submit">Sign up</button>	
+			</form>
+			<h6 class='already-last-line'>
+				Already have an account? 
+				<a href="{% url 'loginuser' %}">Login</a>
+			</h6>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
