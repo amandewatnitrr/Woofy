@@ -13,7 +13,7 @@ Consider the possibility that we utilize this innovation to help moms. Also, tha
 </p>
 
 <p align="center">
-<img src="https://github.com/amandewatnitrr/Woofy/blob/main/imgs/data-transformation-explained-blog-image-removebg.png" width= 50%>
+<img src="https://github.com/amandewatnitrr/Woofy/blob/main/imgs/data-transformation-explained-blog-image-removebg.png" width= 70%>
 </p>
 
 ## Goals 🎖
