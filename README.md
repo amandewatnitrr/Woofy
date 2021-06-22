@@ -25,3 +25,7 @@ Consider the possibility that we utilize this innovation to help moms. Also, tha
   3. Notifies Guardian in case of any event that requires immediate attention: In case the baby tries to climb the cradle or if any force that appears to cause the cradle to fall is experienced. The Guardians are notified immediately.
 
 </p>
+
+## Technologies
+
+<span><img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green"></span>
