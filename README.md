@@ -34,7 +34,7 @@ Consider the possibility that we utilize this innovation to help moms. Also, tha
 
 <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green"> <img src="https://img.shields.io/badge/DJANGO-REST-ff1709?style=for-the-badge&logo=django&logoColor=white&color=ff1709&labelColor=gray"> <img src="https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white"> <img src="https://img.shields.io/badge/sublime_text-%23575757.svg?&style=for-the-badge&logo=sublime-text&logoColor=important">
   
-<img src="https://github.com/amandewatnitrr/Woofy/blob/main/imgs/django.svg" width="30"/> <img src="https://github.com/amandewatnitrr/Woofy/blob/main/imgs/sqlite.svg" width="90"/> <img src="https://github.com/amandewatnitrr/Woofy/blob/main/imgs/sublime-text.svg" width="40"/>
+<img src="https://github.com/amandewatnitrr/Woofy/blob/main/imgs/django.svg" width="30"/>&nbsp; <img src="https://github.com/amandewatnitrr/Woofy/blob/main/imgs/sqlite.svg" width="90"/>&nbsp; <img src="https://github.com/amandewatnitrr/Woofy/blob/main/imgs/sublime-text.svg" width="40"/>&nbsp;
   
  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"> <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"> 
 
