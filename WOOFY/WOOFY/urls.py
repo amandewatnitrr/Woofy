@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls.static import static
 from woofy_app import views
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,5 +25,9 @@ urlpatterns = [
     path('login/', views.loginuser, name='loginuser'),
     path('signup/',views.signupuser, name='signupuser'),
     path('logout/', views.logoutuser, name='logoutuser'),
-    path('main/',views.main,name="main")
+    path('main/',views.main,name="main"),
+    path('profile/',views.profileview,name='profileview'),
+    path('profiledit/',views.profiledit,name='profiledit')
 ]
+
+urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

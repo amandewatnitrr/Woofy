@@ -1,0 +1,176 @@
+{% load static %}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/92e551cba2.js" crossorigin="anonymous"></script>
+
+<style>
+  body{
+    font-family: 'Poppins', sans-serif;
+    background: url("{% static 'cloneapp/profile back green 2.svg' %} "), linear-gradient(to bottom, aquamarine, white);
+    background-repeat: no-repeat;
+    background-size:  cover;
+    z-index: -1;
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+    padding: 30px;
+    width: 70%;
+    justify-content: center;
+    align-self: center;
+    place-items: center;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.596), rgba(255, 255, 255, 0.562));
+    border-bottom: 3px solid #009879;
+  }
+  .content-table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 16px;
+    max-width: 700px;
+    min-width: 400px;
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.20);
+    background-color: aquamarine;
+  }
+  .content-table td{
+    padding: 12px 15px;
+  }
+  .content-table tbody tr{
+    border-bottom: 1px solid rgb(30, 218, 124);
+  }
+  .content-table tbody tr:nth-of-type(even){
+    background-color: rgb(248, 248, 248);
+  }
+  .content-table tbody tr:last-of-type{
+    border-bottom: 3px solid #009879;
+  }
+  .edit-button, .home-button{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    text-decoration: none;
+    width: 100px;
+    color: rgb(255, 255, 255);
+    background-color: #009879;
+    padding: 7px;
+    border-radius: 30px;
+  }
+  .edit-button:hover, .home-button:hover{
+    
+    transform: scale3d(1.1,1.1,1);
+    transition: all 0.2s ease-in;
+  }
+
+  @media (max-width: 1000px) {
+  body{
+      background: url(""),repeating-linear-gradient(45deg, aquamarine, white 50%);
+    }
+  }
+
+</style>
+
+
+<div class="container">
+ 
+  {% if profile.profile_picture %}
+  <img src="{{profile.profile_picture.url}}" alt="img" height="100" width="100">
+  {% else %}
+  <img src="{% static 'woofy_app/profile avatar green.svg' %}" height="100" width="100">
+  {% endif %}
+
+<table class="content-table">
+  <tbody>
+    <tr>
+      <td>Child name </td>
+      <td>{{profile.childs_name}}</td>
+    </tr>
+
+    {% if profile.mothers_name %}
+    <tr>
+      <td>Mother name </td>
+      <td>{{profile.mothers_name}}</td>
+    </tr>
+    {% else %}
+
+    <tr>
+      <td>Mother name</td>
+      <td>Enter Mother name...</td>   
+    </tr>
+    {% endif %}
+
+    {% if profile.age %}
+    <tr>
+      <td>Age </td>
+      <td>{{profile.age}}</td>
+    </tr>
+    {% else %}
+
+    <tr>
+      <td>Age</td>
+      <td>Enter child age...</td>   
+    </tr>
+    {% endif %}
+
+    {% if profile.birth_date %}
+    <tr>
+      <td>Birth date </td>
+      <td>{{profile.birth_date}}</td>
+    </tr>
+    {% else %}
+
+    <tr>
+      <td>Birth date</td>
+      <td>Enter Birth date...</td>   
+    </tr>
+    {% endif %}
+
+    {% if profile.phone_number %}
+    <tr> 
+      <td>Phone Number</td>
+      <td>{{profile.phone_number}}</td>     
+    </tr>
+    {% else %}
+
+    <tr>
+      <td>Phone Number</td>
+      <td>Enter Phone Number...</td>   
+    </tr>
+    {% endif %}
+
+    <tr>
+      <td>Email Id</td>
+      <td>{{profile.email}}</td>
+    </tr>
+
+    {% if profile.address %}
+    <tr>
+      <td>Address</td>
+      <td>{{profile.address}}</td>   
+    </tr>
+    {% else %}
+
+    <tr>
+      <td>Address</td>
+      <td>Manage your addresses...</td>   
+    </tr>
+    {% endif %}
+  </tbody>
+</table>
+
+<a class="edit-button" href="{% url 'profiledit' %}">Edit</a>
+<a class="home-button" href="{% url 'main' %}">Home</a>
+</div>
+<!--
+<h1>Username- {{profile.username}}</h1>
+{% if profile.phone_number %}
+<h3>Phoneno.- {{profile.phone_number}}</h3>
+{% else %}
+<h3>Phoneno.- Add a phone number...</h3>
+{% endif %}
+<h3>Email- {{profile.email}}</h3>
+{% if profile.address %}
+<h4>Address- {{profile.address}}</h4>
+{% else %}
+<h4>Address- Manage your addresses...</h4>
+{% endif %}
+-->

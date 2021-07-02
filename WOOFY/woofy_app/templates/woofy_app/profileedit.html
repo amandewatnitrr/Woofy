@@ -1,0 +1,96 @@
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/92e551cba2.js" crossorigin="anonymous"></script>
+
+<style>
+	@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+  input[type='checkbox'],
+  input[type='radio'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+}
+	*{
+		box-sizing: border-box;
+		list-style: none;
+		text-decoration: none;
+	}
+  body{
+    font-family: 'Poppins', sans-serif;
+		background: repeating-linear-gradient(135deg, aquamarine, white 50%);
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+    width: 70%;
+    justify-content: center;
+    align-self: center;
+    place-items: center;
+  }
+  
+	form{
+		display: flex;
+		flex-direction: column;
+	}
+	label{
+      color:rgb(83, 81, 81);
+			font-size: 20px;
+    }
+
+	input{
+		font-family: 'Poppins', sans-serif;
+		font-size: 18px;
+		padding: 6px;
+		margin-left: 20px;
+		background: transparent;
+		border: none;
+		border-bottom: 1px solid #009879;
+	}
+	input:focus{
+		background: transparent;
+		border: none;
+		outline: none;
+		border-bottom: 2px solid #e20561;
+		font-family: 'Poppins', sans-serif;
+		transition: all 0.2s ease-out;
+	}
+	input[type=file]{
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: white;
+		width: 100%;
+		background-color: #00987a86;
+    font-size: 16px;
+    border: none;
+		outline: none;
+		margin-left: 0;
+	}
+
+	button{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: white;
+		width: 100px;
+		background-color: #009879;
+    font-size: 16px;
+    border: none;
+		outline: none;
+    border-radius: 30px;
+    padding: 10px;
+		cursor: pointer;
+		margin-top: 50px;
+		align-self: center;
+  }
+
+  button:hover{
+    transform: scale3d(1.1,1.1,1);
+    transition: all 0.2s ease-in-out;
+  }
+
+</style>
+<div class="container">
+	<form method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{form.as_p}}
+	
+	<button class="edit-button" type="submit">Submit</button>	
+	</form>
+</div>
