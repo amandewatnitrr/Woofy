@@ -5,6 +5,12 @@
 </head>
 <body>
 
+	<script>
+  window.setTimeout(function(){
+    window.location.href = "{% url 'report' %}";
+  }, 100);
+	</script>
+
 	<h1>Welcome to report page</h1>
 
 	<h1>oxysat = {{oxysat}} </h1><br>

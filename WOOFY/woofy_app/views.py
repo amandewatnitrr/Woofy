@@ -102,8 +102,11 @@ def profiledit(request):
 		return render(request,'woofy_app/profileedit.html',{'profile':show,'form':form})
 	else:
 		form = ProfileForm(request.POST, request.FILES, instance=show)
-		form.save()
-		return redirect('profileview')
+		if(form.is_valid()):
+			form.save()
+			return redirect('profileview')
+		else:
+			return redirect('profileview')
 
 @login_required
 def report(request):
