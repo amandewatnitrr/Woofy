@@ -7,6 +7,22 @@ from django.core.mail import send_mail
 from django.conf import settings	
 from django.contrib import messages
 from .models import Userprofile
+import random
+import pyrebase
+
+firebaseConfig = {
+    "apiKey": "AIzaSyDQL1f2c5PRaj_1xXxMpdczT8m_bXZ-flM",
+    "authDomain": "bmp180-1569c.firebaseapp.com",
+    "databaseURL": "https://bmp180-1569c-default-rtdb.firebaseio.com",
+    "projectId": "bmp180-1569c",
+    "storageBucket": "bmp180-1569c.appspot.com",
+    "messagingSenderId": "861317072378",
+    "appId": "1:861317072378:web:1dcd26ae45e21b9b549043",
+    "measurementId": "G-KS2RHXGSF9"
+  };
+firebase = pyrebase.initialize_app(firebaseConfig)
+auth = firebase.auth()
+database=firebase.database()
 
 def home(request):
 	return render(request,'woofy_app/home.html')
@@ -36,7 +52,17 @@ def signupuser(request):
 			login(request,user)
 			user_profile = Userprofile.objects.create(user=request.user,childs_name=request.POST['username'],email=request.POST['email'])
 			user_profile.save()
-			return redirect('home')
+			username=request.POST['username']
+			oxysat = random.randint(0,9)
+			pressure = random.randint(0,9)
+			temp = random.randint(0,9)
+			data = {
+				"oxysat":oxysat,
+				"pressure":pressure,
+				"temp":temp
+			}
+			database.child("main_test").child(username).set(data)
+			return redirect('main')
 		else:
 			messages.success(request,'passwords didnt matched')
 			return render(request, 'woofy_app/signupuser.html',{'form':RegisterForm(),'error':'passwords didnt matched'})
@@ -78,3 +104,11 @@ def profiledit(request):
 		form = ProfileForm(request.POST, request.FILES, instance=show)
 		form.save()
 		return redirect('profileview')
+
+@login_required
+def report(request):
+	username=request.user.username
+	oxysat = database.child('main_test').child(username).child('oxysat').get().val()
+	pressure = database.child('main_test').child(username).child('pressure').get().val()
+	temperature = database.child('main_test').child(username).child('temp').get().val()
+	return render(request,'woofy_app/report.html',{'oxysat':oxysat,'pressure':pressure,'temperature':temperature})
