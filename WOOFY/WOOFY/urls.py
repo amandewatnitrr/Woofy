@@ -28,7 +28,6 @@ urlpatterns = [
     path('main/',views.main,name="main"),
     path('profile/',views.profileview,name='profileview'),
     path('profiledit/',views.profiledit,name='profiledit'),
-    path('report/',views.report,name="report")
 ]
 
 urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
